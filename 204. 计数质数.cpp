@@ -19,18 +19,22 @@ using namespace std;
 class Solution {
 public:
     int countPrimes(int n) {
-        if (n == 0 || n == 1)return 0;
-        vector<bool> ha(n+1);
-        int ans = 0;
-        for (int i = 2; i < n; i++)
+        int res = 0;
+        vector<bool> prime(n + 1, false);
+        //for (int i = 0; i < n; i++)prime[i] = true;
+        for (int i = 2; i <=sqrt(n); i++)
         {
-            if (ha[i])continue;
-            ans++;
-            for (int j = 2*i; j < n; j+=i)
-            {
-                ha[j] = true;
+            if (!prime[i]) {
+                for (int j = i*i; j <n; j+=i)
+                {
+                    prime[j] = true;
+                }
             }
         }
-        return ans;
+        for (int i = 2; i <n; i++)
+        {
+            if (!prime[i])res++;
+        }
+        return res;
     }
 };

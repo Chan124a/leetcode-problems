@@ -12,15 +12,15 @@
 #include <unordered_map>
 #include <time.h>
 using namespace std;
-//struct fraction {
-//	int num;
-//	int denum;
-//};
-//struct student {
-//	char* name;
-//	char suid[8];
-//	int numUnits;
-//};
+struct fraction {
+	int num;
+	int denum;
+};
+struct student {
+	char* name;
+	char suid[8];
+	int numUnits;
+};
 void* isearch(void* key, void* base, int n, int elemsize, int (*cmpfn)(void*, void*)) {
 	for (int i = 0; i < n; i++)
 	{
@@ -39,6 +39,7 @@ int StrCmp(void* vp1, void* vp2) {
 	char* s2 = *(char**)vp2;
 	return strcmp(s1, s2);
 }
+
 int main() {
 	//µÚ2¿Î´úÂë
 
@@ -96,8 +97,10 @@ int main() {
 	//int size = 6;
 	//int number = 7;
 	//int *found = (int*)isearch(&number, arr, 6, sizeof(int), intcmp);
-	char* notes[] = { "Ab","F#","B","Gb","D" };
-	char notes2[] = "AAAAA BBBB CCCC   ";
-	char* favoretenote = "Eb";
-	char** found = (char **)isearch(&favoretenote, notes, 5, sizeof(char*), StrCmp);
+	//char* notes[] = { "Ab","F#","B","Gb","D" };
+	//char notes2[] = "AAAAA BBBB CCCC   ";
+	//char* favoretenote = "Eb";
+	//char** found = (char **)isearch(&favoretenote, notes, 5, sizeof(char*), StrCmp);
+	int i = 0;
+	cout << i << " " << ++i << endl; // undefined
 }
